@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINATION'
+define service ZBSNSPLS_SD {
+  expose ZBSNSPLS_PV as main;
+}

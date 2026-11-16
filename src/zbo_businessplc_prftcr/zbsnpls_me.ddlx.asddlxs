@@ -1,0 +1,53 @@
+@Metadata.layer: #PARTNER
+annotate entity ZBSNSPLS_PV
+    with 
+{
+    @UI.facet: [{ id: 'ID01', type: #COLLECTION, label: 'BSNSPLS CODE DATA', position: 10 },
+  { id: 'Idc01', type: #IDENTIFICATION_REFERENCE, parentId: 'ID01' } ]
+  @UI.hidden: true
+    Recuuid;
+    @UI.lineItem: [{ position: 11, label: 'Plant' }]
+  @UI.identification: [{ position: 11, label: 'Plant' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPLANT_VH', element: 'Plant' },
+  additionalBinding: [{ localElement: 'Plantname', element: 'PlantName' }] } ] 
+    Plant;
+    @UI.lineItem: [{ position: 15, label: 'Plant Description' }]
+  @UI.identification: [{ position: 22, label: 'Plant Description' }]
+    Plantname;
+    @UI.lineItem: [{ position: 18, label: 'Profit Center' }]
+  @UI.identification: [{ position: 11, label: 'Profit Center' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPRFTCNTR_VH', element: 'Profitcenter' },
+  additionalBinding: [{ localElement: 'Profitcenter', element: 'ProfitCenterName' }] } ]
+    Profitcenter;
+    @UI.lineItem: [{ position: 20, label: 'Pos Code' }]
+  @UI.identification: [{ position: 20, label: 'Pos Code' }]
+    Poscode;
+    @UI.lineItem: [{ position: 22, label: 'Rec Storage Location' }]
+  @UI.identification: [{ position: 22, label: 'Rec Storage Location' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_StorageLocation', element: 'StorageLocation' },
+  additionalBinding: [{ localElement: 'Recstorageloc', element: 'StorageLocationName' }] } ]
+    Recstorageloc;
+     @UI.lineItem: [{ position: 24, label: 'Issuing Plant' }]
+  @UI.identification: [{ position: 24, label: 'Issuing Plant' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPLANT_VH', element: 'Plant' } } ]
+    Issuingplant;
+     @UI.lineItem: [{ position: 25, label: 'Storage Location' }]
+  @UI.identification: [{ position: 25, label: 'Storage Location' }]
+   @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_StorageLocation', element: 'StorageLocation' },
+  additionalBinding: [{ localElement: 'Recstorageloc', element: 'StorageLocationName' }] } ]
+    Storageloc;
+     @UI.lineItem: [{ position: 26, label: 'Cost Center' }]
+  @UI.identification: [{ position: 16, label: 'Cost Center' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZCOSTCENTER_VH', element: 'Costcenter' },
+  additionalBinding: [{ localElement: 'Costcenter', element: 'CostCenterDescription' }] } ]
+    Costcenter;
+     @UI.lineItem: [{ position: 27, label: 'Company Code' }]
+  @UI.identification: [{ position: 27, label: 'Company Code' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZCOMPANYCODE_VH', element: 'Companycode' },
+  additionalBinding: [{ localElement: 'Companycode', element: 'CompanyCodeName' }] } ]
+    Companycode;
+    @UI.lineItem: [{ position: 28, label: 'Business Place' }]
+  @UI.identification: [{ position: 28,label: 'Business Place' }]
+    Businessplace;
+    
+}

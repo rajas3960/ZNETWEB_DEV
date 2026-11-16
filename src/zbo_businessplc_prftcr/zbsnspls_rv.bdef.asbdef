@@ -1,0 +1,44 @@
+managed implementation in class zbp_bsnspls_rv unique;
+strict ( 2 );
+with draft;
+define behavior for ZBSNSPLS_RV //alias <alias_name>
+persistent table zbsplc_pcntr_tbl
+draft table zbsplc_pcntr_dft
+lock master  total etag Recuuid
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly ) Recuuid;
+  field ( numbering : managed ) Recuuid;
+  create ( authorization : global );
+  update;
+  delete;
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+   determination cfd on modify { create; }
+
+
+  mapping for zbsplc_pcntr_tbl control zbplc_prftcntr_structure
+    {
+      Companycode   = companycode;
+      Costcenter    = costcenter;
+      //      CreatedAt     = createdat;
+      //      CreatedBy     = createdby;
+      Issuingplant  = issuingplant;
+      //      LastChangedAt = lastchangedat;
+      //      LastChangedBy = lastchangedby;
+      Storageloc    = storageloc;
+      Recuuid       = recuuid;
+      Recstorageloc = recstorageloc;
+      Profitcenter  = profitcenter;
+      Plant         = plant;
+      Plantname     = plantname;
+      Poscode       = poscode;
+      Businessplace = businessplace;
+    }
+}
